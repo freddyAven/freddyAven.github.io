@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Freddy Avendaño | Ing. Telecomunicaciones</title>
+    <title>Freddy Avendaño | Servicios Técnicos</title>
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; margin: 0; background-color: #f9f9f9; }
         .container { max-width: 900px; margin: 0 auto; padding: 20px; background: white; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
         
         header { text-align: center; padding: 40px 20px; background: #2c3e50; color: white; margin-bottom: 30px; }
-        header h1 { margin: 0; font-size: 2.5em; }
+        header h1 { margin: 0; font-size: 2.2em; }
         header p { font-size: 1.1em; color: #ecf0f1; margin: 10px 0; }
         
         .contact-bar { background: #34495e; color: white; padding: 10px; text-align: center; font-size: 0.9em; margin-bottom: 30px; }
@@ -17,24 +17,33 @@
         section { margin-bottom: 40px; padding: 0 20px; }
         h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
         
+        /* Estilos de Proyectos anteriores */
         .project-card { border-left: 5px solid #3498db; background: #f8f9fa; padding: 15px; margin-bottom: 20px; }
         .project-card h3 { margin-top: 0; color: #2980b9; }
         
+        /* NUEVOS ESTILOS PARA SERVICIOS */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; }
+        .service-card { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-top: 4px solid #e67e22; text-align: center; transition: transform 0.2s; }
+        .service-card:hover { transform: translateY(-5px); }
+        .service-icon { font-size: 2.5em; display: block; margin-bottom: 10px; }
+        .whatsapp-btn { display: inline-block; background-color: #25D366; color: white; padding: 12px 25px; text-decoration: none; border-radius: 30px; font-weight: bold; margin-top: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .whatsapp-btn:hover { background-color: #128C7E; }
+
         .skills-grid { display: flex; flex-wrap: wrap; gap: 10px; }
         .skill { background: #e0e0e0; padding: 5px 15px; border-radius: 15px; font-weight: bold; font-size: 0.9em; }
-        .skill.tech { background: #d5f5e3; color: #1e8449; } /* Verde para técnico */
-        .skill.soft { background: #d6eaf8; color: #2874a6; } /* Azul para soft skills */
+        .skill.tech { background: #d5f5e3; color: #1e8449; } 
+        .skill.soft { background: #d6eaf8; color: #2874a6; }
 
         footer { text-align: center; padding: 20px; font-size: 0.8em; color: #777; border-top: 1px solid #ddd; }
     </style>
 </head>
 <body>
 
-<header>
-        <img src="DSC_0104.jpg" alt="Freddy Avendaño" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #3498db; object-fit: cover; margin-bottom: 15px;">
+    <header>
+        <img src="foto.jpg" alt="Freddy Avendaño" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #3498db; object-fit: cover; margin-bottom: 15px;">
         
         <h1>Freddy René Avendaño Jiménez</h1>
-        <p>Ingeniero en Telecomunicaciones | Tecnólogo en Electrónica</p>
+        <p>Ingeniero en Telecomunicaciones | Soporte Técnico Especializado</p>
     </header>
 
     <div class="contact-bar">
@@ -43,90 +52,78 @@
 
     <div class="container">
 
-        <section>
-            <h2>Perfil Profesional</h2>
-            <p>Ingeniero con sólida experiencia técnica y operativa en telecomunicaciones y automatización. He liderado proyectos desde la instalación física de fibra óptica en planta externa hasta la digitalización de procesos industriales complejos. Me especializo en conectar la infraestructura física con soluciones de software.</p>
+        <section style="text-align: center;">
+            <h2>🚀 Servicios Profesionales</h2>
+            <p>Soluciones técnicas confiables y garantizadas a domicilio o en empresa.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="service-icon">💻</span>
+                    <h3>Soporte de Computadoras</h3>
+                    <p>Mantenimiento preventivo, formateo, instalación de programas, reparación de hardware y recuperación de datos.</p>
+                </div>
+
+                <div class="service-card">
+                    <span class="service-icon">📡</span>
+                    <h3>Instalación de Redes</h3>
+                    <p>Cableado estructurado, configuración de Routers/WiFi, puntos de acceso, fibra óptica y cámaras de seguridad.</p>
+                </div>
+
+                <div class="service-card">
+                    <span class="service-icon">⚡</span>
+                    <h3>Proyectos Electrónicos</h3>
+                    <p>Automatización con Arduino, sensores, instalaciones eléctricas residenciales y domótica.</p>
+                </div>
+            </div>
+
+            <a href="https://wa.me/593979020239?text=Hola%20Ingeniero,%20vi%20su%20web%20y%20deseo%20cotizar%20un%20servicio" class="whatsapp-btn" target="_blank">
+                💬 Cotizar Servicio por WhatsApp
+            </a>
         </section>
 
         <section>
-            <h2>Proyectos Destacados</h2>
+            <h2>Perfil Profesional</h2>
+            <p>Ingeniero con sólida experiencia técnica y operativa en telecomunicaciones y automatización. He liderado proyectos desde la instalación física de fibra óptica en planta externa hasta la digitalización de procesos industriales complejos.</p>
+        </section>
+
+        <section>
+            <h2>Experiencia y Proyectos</h2>
             
             <div class="project-card">
                 <h3>🏭 Digitalización Industrial (ILE)</h3>
-                <p><strong>Rol:</strong> Ingeniero de Proyecto</p>
-                <p>Desarrollo de un sistema para la digitalización de datos en líneas de producción. Implementación de métricas de eficiencia (KPIs y OEE) para optimizar la toma de decisiones industriales.</p>
+                <p>Desarrollo de sistema para digitalización de datos en líneas de producción. Implementación de métricas de eficiencia (KPIs) para optimización industrial.</p>
             </div>
 
             <div class="project-card">
-                <h3>🤖 Clasificación Robótica Automatizada</h3>
-                <p><strong>Rol:</strong> Tecnólogo Desarrollador</p>
-                <p>Diseño y programación de un sistema de clasificación de objetos por colores utilizando un brazo robótico. Integración de sensores y lógica de control en tiempo real.</p>
+                <h3>🤖 Automatización Robótica</h3>
+                <p>Diseño de sistema de clasificación de objetos por colores utilizando brazo robótico, sensores y programación en C.</p>
             </div>
 
             <div class="project-card">
-                <h3>📡 Infraestructura de Redes (Necusoft / Vilcanet)</h3>
-                <p><strong>Rol:</strong> Técnico de Planta Externa</p>
-                <p>Despliegue de redes de fibra óptica, instalación de equipos y mantenimiento de infraestructura de telecomunicaciones para proveedores de internet locales.</p>
+                <h3>📡 Infraestructura (Necusoft / Vilcanet)</h3>
+                <p>Despliegue de redes de fibra óptica, instalación de equipos y mantenimiento de infraestructura de internet.</p>
             </div>
         </section>
 
         <section>
-            <h2>Competencias Técnicas</h2>
-            <div class="skills-grid">
-                <span class="skill tech">Redes CISCO (CCNA)</span>
-                <span class="skill tech">Fibra Óptica</span>
-                <span class="skill tech">Python</span>
-                <span class="skill tech">PLCs Siemens</span>
-                <span class="skill tech">Robots EPSON</span>
-                <span class="skill tech">Arduino / C++</span>
-                <span class="skill tech">GNU Radio</span>
-                <span class="skill tech">Electrónica Industrial</span>
-            </div>
-        </section>
-        
-       <section>
-            <h2>Certificaciones y Formación Continua</h2>
+            <h2>Certificaciones y Formación</h2>
             
             <div style="background: #eaf2f8; padding: 10px; border-left: 4px solid #2980b9; margin-bottom: 15px;">
                 <strong>🎓 Diplomado:</strong> Técnico en Sistemas Informáticos (Fundación Carlos Slim)
             </div>
 
             <ul>
-                <li><strong>Redes y Telecomunicaciones:</strong>
-                    <ul>
-                        <li>Cisco CCNAv7: Switching, Routing and Wireless Essentials.</li>
-                        <li>Técnico en Redes de Datos.</li>
-                        <li>Instalador de Fibra Óptica.</li>
-                    </ul>
-                </li>
-                
-                <li><strong>Soporte Técnico y Hardware:</strong>
-                    <ul>
-                        <li>Técnico en Instalación y Reparación de Equipo de Cómputo.</li>
-                        <li>Reparador de Celulares y Tabletas.</li>
-                    </ul>
-                </li>
-
-                <li><strong>Ciberseguridad:</strong>
-                    <ul>
-                        <li>Técnico en Seguridad Informática (Análisis de Riesgos).</li>
-                        <li>Prevención de Riesgos Laborales en Energía Eléctrica.</li>
-                    </ul>
-                </li>
-
-                <li><strong>Desarrollo y Software:</strong>
-                    <ul>
-                        <li>Python Total - Programador Avanzado.</li>
-                        <li>Técnico en Informática (Ofimática) y Finder.</li>
-                    </ul>
-                </li>
+                <li><strong>Redes y Telecomunicaciones:</strong> Cisco CCNAv7, Técnico en Redes de Datos, Fibra Óptica.</li>
+                <li><strong>Soporte Técnico:</strong> Reparación de Computadoras, Celulares y Tabletas.</li>
+                <li><strong>Seguridad:</strong> Seguridad Informática y Riesgos Eléctricos.</li>
+                <li><strong>Desarrollo:</strong> Python Avanzado, Arduino, C++.</li>
             </ul>
         </section>
 
     </div>
 
     <footer>
-        <p>© 2025 Freddy Avendaño - Portafolio Profesional</p>
+        <p>© 2025 Freddy Avendaño - Servicios Técnicos & Ingeniería</p>
     </footer>
 
 </body>
