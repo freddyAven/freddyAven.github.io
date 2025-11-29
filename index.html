@@ -26,7 +26,7 @@
         .service-card:hover { transform: translateY(-5px); }
         .service-icon { font-size: 2.5em; display: block; margin-bottom: 10px; }
 
-        /* --- ESTILOS DEL CARRUSEL HÍBRIDO (AUTO + MANUAL) --- */
+        /* --- ESTILOS DEL CARRUSEL --- */
         .carousel-wrapper {
             position: relative;
             background: #2c3e50;
@@ -37,7 +37,7 @@
         .carousel-track {
             display: flex;
             overflow-x: auto;
-            scroll-behavior: smooth; /* Deslizamiento suave */
+            scroll-behavior: smooth;
             gap: 15px;
             padding: 0 20px;
             scrollbar-width: none; 
@@ -54,10 +54,9 @@
             transition: transform 0.3s;
         }
         
-        /* Efecto Zoom al pasar el mouse */
         .carousel-track img:hover { transform: scale(1.05); border-color: #e67e22; }
 
-        /* Flechas de navegación */
+        /* Flechas */
         .nav-btn {
             position: absolute;
             top: 50%;
@@ -71,7 +70,7 @@
             cursor: pointer;
             z-index: 10;
             box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-            transition: background 0.1s, color 0.3s;
+            transition: background 0.3s, color 0.3s;
         }
         .nav-btn:hover { background-color: #e67e22; color: white; }
         .prev-btn { left: 10px; }
@@ -87,7 +86,7 @@
 
     <header>
         <img src="foto.jpg" alt="Freddy Avendaño" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #3498db; object-fit: cover; margin-bottom: 15px;">
-        <h1>Freddy Avendaño Jiménez</h1>
+        <h1>Freddy René Avendaño Jiménez</h1>
         <p style="font-weight: bold; font-size: 1.2em;">Ingeniero en Telecomunicaciones | Tecnólogo en Electrónica</p>
         <div class="role-subtitle">Freelance & Consultor Técnico</div>
     </header>
@@ -100,7 +99,7 @@
 
         <section>
             <h2>📸 Galería de Proyectos</h2>
-            <p style="text-align: center; font-size: 0.9em; color: #666;">Las fotos avanzan solas. Usa las flechas para control manual o pasa el mouse para detener.</p>
+            <p style="text-align: center; font-size: 0.9em; color: #666;">Las fotos avanzan rápido. Pasa el mouse para detener.</p>
             
             <div class="carousel-wrapper" id="contenedorCarrusel">
                 <button class="nav-btn prev-btn" onclick="moverCarrusel(-1)">&#10094;</button>
@@ -114,10 +113,10 @@
         <script>
             const track = document.getElementById('trackFotos');
             const contenedor = document.getElementById('contenedorCarrusel');
-            const totalFotos = 100; // Busca hasta la foto a100
-            let autoPlayInterval; // Variable para controlar el tiempo
+            const totalFotos = 100; 
+            let autoPlayInterval;
 
-            // 1. Cargar Fotos (Script Inteligente)
+            // 1. Cargar Fotos
             function cargarFotos() {
                 for (let i = 1; i <= totalFotos; i++) {
                     let img = document.createElement('img');
@@ -125,7 +124,6 @@
                     img.src = `${rutaBase}.jpg`;
                     img.alt = `Proyecto ${i}`;
                     
-                    // Corrección automática de extensión y ocultar errores
                     img.onerror = function() {
                         if (this.src.includes('.jpg')) {
                             this.src = `${rutaBase}.JPG`;
@@ -140,7 +138,7 @@
 
             // 2. Función de Movimiento
             function moverCarrusel(direccion) {
-                const desplazamiento = 320; // Cantidad de píxeles a mover
+                const desplazamiento = 320; 
                 if (direccion === 1) {
                     track.scrollLeft += desplazamiento;
                 } else {
@@ -148,29 +146,26 @@
                 }
             }
 
-            // 3. Lógica Automática (Auto-Play)
+            // 3. Lógica Automática RÁPIDA
             function iniciarAutoPlay() {
                 autoPlayInterval = setInterval(() => {
-                    // Si llega al final, vuelve al principio suavemente
+                    // Si llega al final, vuelve al principio
                     if (track.scrollLeft + track.clientWidth >= track.scrollWidth) {
                         track.scrollTo({ left: 0, behavior: 'smooth' });
                     } else {
                         moverCarrusel(1);
                     }
-                }, 3000); // CAMBIA DE FOTO CADA 3 SEGUNDOS
+                }, 1000); // <-- AQUÍ ESTÁ EL CAMBIO: 1 SEGUNDO (1000ms)
             }
 
             function detenerAutoPlay() {
                 clearInterval(autoPlayInterval);
             }
 
-            // Iniciar el movimiento automático
             iniciarAutoPlay();
 
-            // Detener si el usuario pone el mouse encima (para ver bien la foto)
+            // Pausa al pasar el mouse
             contenedor.addEventListener('mouseenter', detenerAutoPlay);
-            
-            // Reanudar cuando quita el mouse
             contenedor.addEventListener('mouseleave', iniciarAutoPlay);
 
         </script>
