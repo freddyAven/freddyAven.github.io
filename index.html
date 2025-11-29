@@ -18,9 +18,12 @@
         section { margin-bottom: 40px; padding: 0 20px; }
         h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
         
+        /* Estilos de Proyectos (Ahora con más detalle) */
         .project-card { border-left: 5px solid #3498db; background: #f8f9fa; padding: 15px; margin-bottom: 20px; }
         .project-card h3 { margin-top: 0; color: #2980b9; }
+        .project-card p { margin-bottom: 5px; }
         
+        /* ESTILOS PARA SERVICIOS */
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
         .service-card { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-top: 4px solid #e67e22; text-align: center; transition: transform 0.2s; }
         .service-card:hover { transform: translateY(-5px); }
@@ -86,7 +89,7 @@
 
     <header>
         <img src="foto.jpg" alt="Freddy Avendaño" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #3498db; object-fit: cover; margin-bottom: 15px;">
-        <h1>Freddy René Avendaño Jiménez</h1>
+        <h1>Freddy Avendaño Jiménez</h1>
         <p style="font-weight: bold; font-size: 1.2em;">Ingeniero en Telecomunicaciones | Tecnólogo en Electrónica</p>
         <div class="role-subtitle">Freelance & Consultor Técnico</div>
     </header>
@@ -113,7 +116,7 @@
         <script>
             const track = document.getElementById('trackFotos');
             const contenedor = document.getElementById('contenedorCarrusel');
-            const totalFotos = 100; 
+            const totalFotos = 100; // Busca hasta 100 fotos
             let autoPlayInterval;
 
             // 1. Cargar Fotos
@@ -146,16 +149,15 @@
                 }
             }
 
-            // 3. Lógica Automática RÁPIDA
+            // 3. Lógica Automática RÁPIDA (1 Segundo)
             function iniciarAutoPlay() {
                 autoPlayInterval = setInterval(() => {
-                    // Si llega al final, vuelve al principio
                     if (track.scrollLeft + track.clientWidth >= track.scrollWidth) {
                         track.scrollTo({ left: 0, behavior: 'smooth' });
                     } else {
                         moverCarrusel(1);
                     }
-                }, 1000); // <-- AQUÍ ESTÁ EL CAMBIO: 1 SEGUNDO (1000ms)
+                }, 1000); // 1000ms = 1 Segundo
             }
 
             function detenerAutoPlay() {
@@ -211,30 +213,43 @@
 
         <section>
             <h2>Experiencia y Proyectos</h2>
+            
             <div class="project-card">
-                <h3>🏭 Digitalización Industrial (ILE)</h3>
-                <p>Desarrollo de sistema para digitalización de datos en líneas de producción.</p>
+                <h3>🏭 Digitalización Industrial (ILE) - Ingeniero</h3>
+                <p>Digitalización de datos industriales de las líneas de producción de la empresa ILE. Implementación de sistemas para el cálculo y visualización de <strong>KPIs y OEE (Eficiencia General de los Equipos)</strong> para optimización de procesos.</p>
             </div>
+
             <div class="project-card">
-                <h3>🤖 Automatización Robótica</h3>
-                <p>Diseño de sistema de clasificación de objetos por colores utilizando brazo robótico.</p>
+                <h3>🤖 Automatización Robótica - Tecnólogo</h3>
+                <p>Diseño y programación de un sistema de <strong>clasificación de objetos por colores</strong> mediante brazo robótico. Integración de sensores electrónicos, microcontroladores (Arduino/C) y lógica de control.</p>
             </div>
+
             <div class="project-card">
-                <h3>📡 Infraestructura (Necusoft / Vilcanet)</h3>
-                <p>Despliegue de redes de fibra óptica y mantenimiento de infraestructura.</p>
+                <h3>📡 Infraestructura de Telecomunicaciones (Planta Externa)</h3>
+                <p>Experiencia operativa en empresas como <strong>Necusoft, Vilcanet y Etelnetsol</strong>. Instalación, mantenimiento y reparación de infraestructura de telecomunicaciones, tendido de fibra óptica y configuración de redes en planta externa.</p>
             </div>
         </section>
 
         <section>
             <h2>Certificaciones</h2>
-            <div style="background: #eaf2f8; padding: 10px; border-left: 4px solid #2980b9; margin-bottom: 15px;">
+            
+            <div style="background: #eaf2f8; padding: 15px; border-left: 5px solid #2980b9; margin-bottom: 20px; border-radius: 4px;">
                 <strong>🎓 Diplomado:</strong> Técnico en Sistemas Informáticos (Fundación Carlos Slim)
             </div>
-            <ul>
-                <li><strong>Redes:</strong> Cisco CCNAv7, Fibra Óptica.</li>
-                <li><strong>Industria:</strong> Prevención de Riesgos, Automatización.</li>
-                <li><strong>Soporte:</strong> PC, Celulares.</li>
-                <li><strong>Desarrollo:</strong> Python, Arduino.</li>
+
+            <ul style="line-height: 1.8;">
+                <li><strong>Redes y Telecomunicaciones:</strong>
+                    Cisco CCNAv7 (Switching, Routing & Wireless), Técnico en Redes de Datos, Instalador de Fibra Óptica.
+                </li>
+                <li><strong>Industria y Seguridad:</strong>
+                    Prevención de Riesgos Laborales (Energía Eléctrica), Técnico en Seguridad Informática (Análisis de Riesgos), Automatización Industrial.
+                </li>
+                <li><strong>Soporte Técnico:</strong>
+                    Técnico en Instalación y Reparación de Equipo de Cómputo, Reparador de Celulares y Tabletas.
+                </li>
+                <li><strong>Desarrollo y Software:</strong>
+                    Python TOTAL (Programador Avanzado), Arduino, Sensores y Programación C.
+                </li>
             </ul>
         </section>
 
